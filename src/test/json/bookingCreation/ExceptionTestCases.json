@@ -1,0 +1,175 @@
+{
+  "testCases": [{
+    "config": {
+      "id": "1",
+      "description": "First Name is Null"
+    },
+    "inputParams": {
+      "bookingResource": {
+        "firstname": null,
+        "lastname": "Brown",
+        "totalprice": 111,
+        "depositpaid": false,
+        "bookingdates": {
+          "checkin": "2018-01-01",
+          "checkout": "2019-01-01"
+        },
+        "additionalneeds": "Breakfast"
+      }
+    },
+    "outputParams": {
+      "exceptionCase": {
+        "statusCode": 500,
+        "error": "Internal Server Error"
+      }
+    }
+  },
+    {
+      "config": {
+        "id": "2",
+        "description": "Last Name is Null"
+      },
+      "inputParams": {
+        "bookingResource": {
+          "firstname": "Lee",
+          "lastname": null,
+          "totalprice": 111,
+          "depositpaid": false,
+          "bookingdates": {
+            "checkin": "2018-01-01",
+            "checkout": "2019-01-01"
+          },
+          "additionalneeds": "Breakfast"
+        }
+      },
+      "outputParams": {
+        "exceptionCase": {
+          "statusCode": 500,
+          "error": "Internal Server Error"
+        }
+      }
+    },
+    {
+      "config": {
+        "id": "3",
+        "description": "Total price is Null"
+      },
+      "inputParams": {
+        "bookingResource": {
+          "firstname": "Lee",
+          "lastname": "Brown",
+          "totalprice": null,
+          "depositpaid": false,
+          "bookingdates": {
+            "checkin": "2018-01-01",
+            "checkout": "2019-01-01"
+          },
+          "additionalneeds": "Breakfast"
+        }
+      },
+      "outputParams": {
+        "exceptionCase": {
+          "statusCode": 500,
+          "error": "Internal Server Error"
+        }
+      }
+    },
+    {
+      "config": {
+        "id": "4",
+        "description": "Booking Date is null"
+      },
+      "inputParams": {
+        "bookingResource": {
+          "firstname": "Lee",
+          "lastname": "Brown",
+          "totalprice": 111,
+          "depositpaid": false,
+          "bookingdates": null,
+          "additionalneeds": "Breakfast"
+        }
+      },
+      "outputParams": {
+        "exceptionCase": {
+          "statusCode": 500,
+          "error": "Internal Server Error"
+        }
+      }
+    },
+    {
+      "config": {
+        "id": "5",
+        "description": "Checkin date is Null"
+      },
+      "inputParams": {
+        "bookingResource": {
+          "firstname": "Lee",
+          "lastname": "Brown",
+          "totalprice": 111,
+          "depositpaid": false,
+          "bookingdates": {
+            "checkin": null,
+            "checkout": "2019-01-01"
+          },
+          "additionalneeds": "Breakfast"
+        }
+      },
+      "outputParams": {
+        "exceptionCase": {
+          "statusCode": 500,
+          "error": "Internal Server Error"
+        }
+      }
+    },
+    {
+      "config": {
+        "id": "6",
+        "description": "Checkout date is Null"
+      },
+      "inputParams": {
+        "bookingResource": {
+          "firstname": "Lee",
+          "lastname": "Brown",
+          "totalprice": 111,
+          "depositpaid": false,
+          "bookingdates": {
+            "checkin": "2018-01-01",
+            "checkout": null
+          },
+          "additionalneeds": "Breakfast"
+        }
+      },
+      "outputParams": {
+        "exceptionCase": {
+          "statusCode": 500,
+          "error": "Internal Server Error"
+        }
+      }
+    },
+    {
+      "config": {
+        "id": "7",
+        "description": "Additional needs is Null"
+      },
+      "inputParams": {
+        "bookingResource": {
+          "firstname": "Lee",
+          "lastname": "Brown",
+          "totalprice": 111,
+          "depositpaid": false,
+          "bookingdates": {
+            "checkin": "2018-01-01",
+            "checkout": null
+          },
+          "additionalneeds": null
+        }
+      },
+      "outputParams": {
+        "exceptionCase": {
+          "statusCode": 500,
+          "error": "Internal Server Error"
+        }
+      }
+    }
+  ]
+}

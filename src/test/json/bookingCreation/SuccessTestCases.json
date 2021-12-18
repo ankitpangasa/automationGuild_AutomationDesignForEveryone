@@ -1,0 +1,344 @@
+{
+  "testCases": [
+    {
+      "config": {
+        "id": "1",
+        "description": "Sanity Testing Insert a new entry"
+      },
+      "inputParams": {
+        "bookingResource": {
+          "firstname": "Tommy",
+          "lastname": "Brown",
+          "totalprice": 111,
+          "depositpaid": false,
+          "bookingdates": {
+            "checkin": "2018-01-01",
+            "checkout": "2019-01-01"
+          },
+          "additionalneeds": "Breakfast"
+        }
+      },
+      "outputParams": {
+        "positiveCase": {
+          "bookingResource": {
+            "firstname": "Tommy",
+            "lastname": "Brown",
+            "totalprice": 111,
+            "depositpaid": false,
+            "bookingdates": {
+              "checkin": "2018-01-01",
+              "checkout": "2019-01-01"
+            },
+            "additionalneeds": "Breakfast"
+          }
+        }
+      }
+    },
+    {
+      "config": {
+        "id": "2",
+        "description": "Multiple words in first name"
+      },
+      "inputParams": {
+        "bookingResource": {
+          "firstname": "Tommy Hance",
+          "lastname": "Brown123",
+          "totalprice": 111,
+          "depositpaid": false,
+          "bookingdates": {
+            "checkin": "2018-01-01",
+            "checkout": "2019-01-01"
+          },
+          "additionalneeds": "Breakfast"
+        }
+      },
+      "outputParams": {
+        "positiveCase": {
+          "bookingResource": {
+            "firstname": "Tommy Hance",
+            "lastname": "Brown123",
+            "totalprice": 111,
+            "depositpaid": false,
+            "bookingdates": {
+              "checkin": "2018-01-01",
+              "checkout": "2019-01-01"
+            },
+            "additionalneeds": "Breakfast"
+          }
+        }
+      }
+    },
+    {
+      "config": {
+        "id": "3",
+        "description": "Multiple words in last name"
+      },
+      "inputParams": {
+        "bookingResource": {
+          "firstname": "Joe",
+          "lastname": "Lee Parker",
+          "totalprice": 111,
+          "depositpaid": false,
+          "bookingdates": {
+            "checkin": "2018-01-01",
+            "checkout": "2019-01-01"
+          },
+          "additionalneeds": "Breakfast"
+        }
+      },
+      "outputParams": {
+        "positiveCase": {
+          "bookingResource": {
+            "firstname": "Joe",
+            "lastname": "Lee Parker",
+            "totalprice": 111,
+            "depositpaid": false,
+            "bookingdates": {
+              "checkin": "2018-01-01",
+              "checkout": "2019-01-01"
+            },
+            "additionalneeds": "Breakfast"
+          }
+        }
+      }
+    },
+    {
+      "config": {
+        "id": "4",
+        "description": "total price is 0"
+      },
+      "inputParams": {
+        "bookingResource": {
+          "firstname": "Joe",
+          "lastname": "Lee Parker",
+          "totalprice": 0,
+          "depositpaid": false,
+          "bookingdates": {
+            "checkin": "2018-01-01",
+            "checkout": "2019-01-01"
+          },
+          "additionalneeds": "Breakfast"
+        }
+      },
+      "outputParams": {
+        "positiveCase": {
+          "bookingResource": {
+            "firstname": "Joe",
+            "lastname": "Lee Parker",
+            "totalprice": 0,
+            "depositpaid": false,
+            "bookingdates": {
+              "checkin": "2018-01-01",
+              "checkout": "2019-01-01"
+            },
+            "additionalneeds": "Breakfast"
+          }
+        }
+      }
+    },
+    {
+      "config": {
+        "id": "5",
+        "description": "total price is string"
+      },
+      "inputParams": {
+        "bookingResource": {
+          "firstname": "Joe",
+          "lastname": "Lee Parker",
+          "totalprice": "$500",
+          "depositpaid": false,
+          "bookingdates": {
+            "checkin": "2018-01-01",
+            "checkout": "2019-01-01"
+          },
+          "additionalneeds": "Breakfast"
+        }
+      },
+      "outputParams": {
+        "positiveCase": {
+          "bookingResource": {
+            "firstname": "Joe",
+            "lastname": "Lee Parker",
+            "totalprice": null,
+            "depositpaid": false,
+            "bookingdates": {
+              "checkin": "2018-01-01",
+              "checkout": "2019-01-01"
+            },
+            "additionalneeds": "Breakfast"
+          }
+        }
+      }
+    },
+    {
+      "config": {
+        "id": "6",
+        "description": "Non Eng characters in First Name"
+      },
+      "inputParams": {
+        "bookingResource": {
+          "firstname": "Zoë",
+          "lastname": "Lee Parker",
+          "totalprice": 10,
+          "depositpaid": false,
+          "bookingdates": {
+            "checkin": "2018-01-01",
+            "checkout": "2019-01-01"
+          },
+          "additionalneeds": "Breakfast"
+        }
+      },
+      "outputParams": {
+        "positiveCase": {
+          "bookingResource": {
+            "firstname": "Zoë",
+            "lastname": "Lee Parker",
+            "totalprice": 10,
+            "depositpaid": false,
+            "bookingdates": {
+              "checkin": "2018-01-01",
+              "checkout": "2019-01-01"
+            },
+            "additionalneeds": "Breakfast"
+          }
+        }
+      }
+    },
+    {
+      "config": {
+        "id": "7",
+        "description": "Non Eng characters in Last Name"
+      },
+      "inputParams": {
+        "bookingResource": {
+          "firstname": "Joey",
+          "lastname": "Adrián",
+          "totalprice": 10,
+          "depositpaid": false,
+          "bookingdates": {
+            "checkin": "2018-01-01",
+            "checkout": "2019-01-01"
+          },
+          "additionalneeds": "Breakfast"
+        }
+      },
+      "outputParams": {
+        "positiveCase": {
+          "bookingResource": {
+            "firstname": "Joey",
+            "lastname": "Adrián",
+            "totalprice": 10,
+            "depositpaid": false,
+            "bookingdates": {
+              "checkin": "2018-01-01",
+              "checkout": "2019-01-01"
+            },
+            "additionalneeds": "Breakfast"
+          }
+        }
+      }
+    },
+    {
+      "config": {
+        "id": "8",
+        "description": "Non Eng (JP) characters in First Name"
+      },
+      "inputParams": {
+        "bookingResource": {
+          "firstname": "愛子",
+          "lastname": "Lee",
+          "totalprice": 10,
+          "depositpaid": false,
+          "bookingdates": {
+            "checkin": "2018-01-01",
+            "checkout": "2019-01-01"
+          },
+          "additionalneeds": "Breakfast"
+        }
+      },
+      "outputParams": {
+        "positiveCase": {
+          "bookingResource": {
+            "firstname": "愛子",
+            "lastname": "Lee",
+            "totalprice": 10,
+            "depositpaid": false,
+            "bookingdates": {
+              "checkin": "2018-01-01",
+              "checkout": "2019-01-01"
+            },
+            "additionalneeds": "Breakfast"
+          }
+        }
+      }
+    },
+    {
+      "config": {
+        "id": "9",
+        "description": "Non Eng (JP) characters in Last Name"
+      },
+      "inputParams": {
+        "bookingResource": {
+          "firstname": "Lee",
+          "lastname": "あいみ",
+          "totalprice": 10,
+          "depositpaid": false,
+          "bookingdates": {
+            "checkin": "2018-01-01",
+            "checkout": "2019-01-01"
+          },
+          "additionalneeds": "Breakfast"
+        }
+      },
+      "outputParams": {
+        "positiveCase": {
+          "bookingResource": {
+            "firstname": "Lee",
+            "lastname": "あいみ",
+            "totalprice": 10,
+            "depositpaid": false,
+            "bookingdates": {
+              "checkin": "2018-01-01",
+              "checkout": "2019-01-01"
+            },
+            "additionalneeds": "Breakfast"
+          }
+        }
+      }
+    },
+    {
+      "config": {
+        "id": "10",
+        "description": "Multiple additional needs"
+      },
+      "inputParams": {
+        "bookingResource": {
+          "firstname": "Lee",
+          "lastname": "あいみ",
+          "totalprice": 10,
+          "depositpaid": false,
+          "bookingdates": {
+            "checkin": "2018-01-01",
+            "checkout": "2019-01-01"
+          },
+          "additionalneeds": "Breakfast, Dinner"
+        }
+      },
+      "outputParams": {
+        "positiveCase": {
+          "bookingResource": {
+            "firstname": "Lee",
+            "lastname": "あいみ",
+            "totalprice": 10,
+            "depositpaid": false,
+            "bookingdates": {
+              "checkin": "2018-01-01",
+              "checkout": "2019-01-01"
+            },
+            "additionalneeds": "Breakfast, Dinner"
+          }
+        }
+      }
+    }
+  ]
+}
